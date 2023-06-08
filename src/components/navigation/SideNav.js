@@ -38,7 +38,7 @@ const Navigation = ({ projects, favorites, mode, fetchProjects }) => {
             sx={{ color: mode ? "#444" : "#fff" }}
             align="center"
           >
-            Work Flow Planner
+            Work Flow
           </Typography>
         </a>
       </Toolbar>
@@ -71,6 +71,36 @@ const SideNav = ({
   const favorites = projects
     ? projects.filter((project) => project.favorite === true)
     : [];
+
+  return (
+    <>
+      {/* Mobile Drawer */}
+      <Drawer
+        container={container}
+        variant="temporary"
+        open={open}
+        onClose={toggleDrawer}
+        ModalProps={{
+          keepMounted: true, // Better open performance on mobile.
+        }}
+        sx={{
+          display: { xs: "block", sm: "none" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: drawerWidth,
+          },
+        }}
+      >
+        {/* Render Navigation component inside the mobile drawer */}
+        <Navigation
+          projects={projects}
+          favorites={favorites}
+          mode={mode}
+          fetchProjects={fetchProjects}
+        />
+      </Drawer>
+    </>
+  );
 };
 
 export default SideNav;
