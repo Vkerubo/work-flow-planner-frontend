@@ -12,7 +12,12 @@ export const Projectlist = ({ list }) => {
 
   return (
     <>
-      <List></List>
+      <List>
+        {/* Collapsible section header */}
+        <ListItemButton onClick={handleClick}>
+          <ListItemText primary="Projects" />
+        </ListItemButton>
+      </List>
     </>
   );
 };
