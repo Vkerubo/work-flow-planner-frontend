@@ -20,6 +20,7 @@ export const FavoriteList = ({ list }) => {
     <div>
       <List>
         <ListItemButton onClick={handleClick}></ListItemButton>
+        <ListItemText primary="Favorites" />
       </List>
     </div>
   );
