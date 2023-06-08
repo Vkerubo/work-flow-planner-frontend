@@ -67,5 +67,10 @@ const SideNav = ({
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
+  // Filter projects to get the favorites
+  const favorites = projects
+    ? projects.filter((project) => project.favorite === true)
+    : [];
+};
 
 export default SideNav;
