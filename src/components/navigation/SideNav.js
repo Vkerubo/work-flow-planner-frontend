@@ -15,6 +15,8 @@ import { useHistory } from "react-router-dom";
 const drawerWidth = 240;
 
 // Navigation component renders the toolbar, favorite list, and project list
-const Navigation = ({ projects, favorites, mode, fetchProjects }) => {};
+const Navigation = ({ projects, favorites, mode, fetchProjects }) => {
+  let history = useHistory();
+};
 
 export default SideNav;
