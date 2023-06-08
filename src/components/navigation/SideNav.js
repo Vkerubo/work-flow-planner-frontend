@@ -55,4 +55,17 @@ const Navigation = ({ projects, favorites, mode, fetchProjects }) => {
   );
 };
 
+// SideNav component renders the mobile and desktop drawers
+const SideNav = ({
+  open,
+  toggleDrawer,
+  window,
+  projects,
+  mode,
+  fetchProjects,
+}) => {
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+
+
 export default SideNav;
