@@ -23,6 +23,28 @@ const Navigation = ({ projects, favorites, mode, fetchProjects }) => {
     history.push("/projects");
     fetchProjects();
   };
+
+  return (
+    <>
+      {/* Toolbar */}
+      <Toolbar className="flex">
+        <a onClick={handleHomeClick} href="#" className="flex link">
+          <Logo />
+          <Typography
+            className="letter-spacing"
+            component="h1"
+            variant="h6"
+            noWrap
+            sx={{ color: mode ? "#444" : "#fff" }}
+            align="center"
+          >
+            Mercury
+          </Typography>
+        </a>
+      </Toolbar>
+
+
+  );
 };
 
 export default SideNav;
