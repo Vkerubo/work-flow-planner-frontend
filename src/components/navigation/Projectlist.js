@@ -4,6 +4,8 @@ import ListItemButton from "@mui/material";
 import ListItemText from "@mui/material";
 import ListItemIcon from "@mui/material";
 import { Dashboard } from "@mui/icons-material";
+import Collapse from "@mui/material";
+import ExpandLess from "@mui/icons-material/ExpandLess";
 
 export const Projectlist = ({ list }) => {
   const [open, setOpen] = React.useState(true);
