@@ -46,6 +46,8 @@ const Navigation = ({ projects, favorites, mode, fetchProjects }) => {
       {/* Favorite List */}
       <FavoriteList list={favorites} />
 
+      {/* Divider */}
+      <Divider sx={{ display: { sm: "none" } }} />
 
   );
 };
