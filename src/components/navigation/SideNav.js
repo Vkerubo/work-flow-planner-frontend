@@ -99,6 +99,32 @@ const SideNav = ({
           fetchProjects={fetchProjects}
         />
       </Drawer>
+
+      {/* Desktop Drawer */}
+      <Drawer
+        variant="permanent"
+        sx={{
+          display: { xs: "none", sm: "block" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: drawerWidth,
+            border: "none",
+            backgroundColor: (theme) =>
+              theme.palette.mode === "light"
+                ? theme.palette.background.default
+                : theme.palette.grey[900],
+          },
+        }}
+        open
+      >
+        {/* Render Navigation component inside the desktop drawer */}
+        <Navigation
+          projects={projects}
+          favorites={favorites}
+          mode={mode}
+          fetchProjects={fetchProjects}
+        />
+      </Drawer>
     </>
   );
 };
