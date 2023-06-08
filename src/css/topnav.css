@@ -11,3 +11,7 @@
   padding: 0 1em;
   max-width: 1000px;
 }
+
+.search-bar .MuiTextField-root {
+  width: 100%;
+}
