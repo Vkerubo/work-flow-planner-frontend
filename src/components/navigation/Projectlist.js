@@ -42,8 +42,9 @@ export const Projectlist = ({ list }) => {
                     <Link className="link" to={`/projects/${item.id}`} exact>
                       {/* Project item */}
                       <ListItemButton sx={{ pl: 4 }}>
-                        <ListItemIcon>
-
+                        <ListItemIcon>{/* Icon for project */}</ListItemIcon>
+                        {/* Title of project */}
+                        <ListItemText primary={item.title} />
                       </ListItemButton>
                     </Link>
                   </List>
