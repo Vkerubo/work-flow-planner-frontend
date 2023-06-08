@@ -1,3 +1,13 @@
 .MuiAvatar-circular {
   margin: 0 10px;
 }
+
+.search-bar {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  margin: 0;
+  background: #fff;
+  padding: 0 1em;
+  max-width: 1000px;
+}
