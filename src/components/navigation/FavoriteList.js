@@ -19,10 +19,39 @@ export const FavoriteList = ({ list }) => {
   return (
     <div>
       <List>
+        {/* Collapsible header */}
         <ListItemButton onClick={handleClick}>
           <ListItemText primary="Favorites" />
           {open ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
+
+        {/* Collapsible content */}
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          {/* Render list items */}
+          {list
+            ? list.map((item) => {
+                return (
+                  <List
+                    component="div"
+                    disablePadding
+                    key={`favorite-${item.id}`}
+                  >
+                    {/* Link to project */}
+                    <Link className="link" to={`/projects/${item.id}`} exact>
+                      <ListItemButton sx={{ pl: 4 }}>
+                        <ListItemIcon>
+                          {/* Star icon */}
+                          <Star />
+                        </ListItemIcon>
+                        {/* Project title */}
+                        <ListItemText primary={item.title} />
+                      </ListItemButton>
+                    </Link>
+                  </List>
+                );
+              })
+            : null}
+        </Collapse>
       </List>
     </div>
   );
