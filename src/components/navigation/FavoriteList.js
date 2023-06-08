@@ -21,6 +21,7 @@ export const FavoriteList = ({ list }) => {
       <List>
         <ListItemButton onClick={handleClick}></ListItemButton>
         <ListItemText primary="Favorites" />
+        {open ? <ExpandLess /> : <ExpandMore />}
       </List>
     </div>
   );
