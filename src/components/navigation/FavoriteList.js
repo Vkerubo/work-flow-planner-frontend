@@ -16,5 +16,11 @@ export const FavoriteList = ({ list }) => {
     setOpen(!open);
   };
 
-  return <div>FavoriteList</div>;
+  return (
+    <div>
+      <List>
+        <ListItemButton onClick={handleClick}></ListItemButton>
+      </List>
+    </div>
+  );
 };
