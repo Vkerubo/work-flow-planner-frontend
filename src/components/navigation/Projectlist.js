@@ -20,6 +20,9 @@ export const Projectlist = ({ list }) => {
           {/* Show different icon based on open/closed state */}
           {open ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
+
+        {/* Collapsible section body */}
+        <Collapse in={open} timeout="auto" unmountOnExit></Collapse>
       </List>
     </>
   );
