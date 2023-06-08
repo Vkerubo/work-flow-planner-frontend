@@ -22,7 +22,9 @@ export const Projectlist = ({ list }) => {
         </ListItemButton>
 
         {/* Collapsible section body */}
-        <Collapse in={open} timeout="auto" unmountOnExit></Collapse>
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          {/* Render project items */}
+        </Collapse>
       </List>
     </>
   );
