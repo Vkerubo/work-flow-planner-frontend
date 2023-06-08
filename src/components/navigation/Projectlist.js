@@ -28,6 +28,15 @@ export const Projectlist = ({ list }) => {
         {/* Collapsible section body */}
         <Collapse in={open} timeout="auto" unmountOnExit>
           {/* Render project items */}
+
+          {list
+            ? list.map((item) => {
+                const currentColorScheme = ProjectColors(item);
+                return (
+
+                );
+              })
+            : null}
         </Collapse>
       </List>
     </>
