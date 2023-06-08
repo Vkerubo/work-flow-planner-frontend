@@ -16,6 +16,8 @@ export const Projectlist = ({ list }) => {
         {/* Collapsible section header */}
         <ListItemButton onClick={handleClick}>
           <ListItemText primary="Projects" />
+          {/* Show different icon based on open/closed state */}
+          {open ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
       </List>
     </>
