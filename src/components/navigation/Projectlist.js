@@ -33,7 +33,15 @@ export const Projectlist = ({ list }) => {
             ? list.map((item) => {
                 const currentColorScheme = ProjectColors(item);
                 return (
+                  <List
+                    component="div"
+                    disablePadding
+                    key={`menuitem-${item.id}`}
+                  >
+                    {/* Link to individual project */}
+                    <Link className="link" to={`/projects/${item.id}`} exact>
 
+                  </List>
                 );
               })
             : null}
