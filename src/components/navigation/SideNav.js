@@ -17,6 +17,12 @@ const drawerWidth = 240;
 // Navigation component renders the toolbar, favorite list, and project list
 const Navigation = ({ projects, favorites, mode, fetchProjects }) => {
   let history = useHistory();
+
+  // Handle click on the home button, navigate to "/projects" and fetch projects
+  const handleHomeClick = (event) => {
+    history.push("/projects");
+    fetchProjects();
+  };
 };
 
 export default SideNav;
