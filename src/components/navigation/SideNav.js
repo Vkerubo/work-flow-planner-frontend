@@ -9,6 +9,6 @@ import {
   Toolbar,
   Divider,
 } from "@mui/material/styles/createTypography";
+import Drawer from "@mui/material";
 
-import { Drawer } from "@mui/material";
 import { useHistory } from "react-router-dom";
