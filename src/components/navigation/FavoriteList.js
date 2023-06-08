@@ -10,5 +10,7 @@ import { ExpandMore } from "@mui/icons-material";
 import { Star } from "@mui/icons-material";
 
 export const FavoriteList = ({ list }) => {
+  const [open, setOpen] = React.useState(true);
+
   return <div>FavoriteList</div>;
 };
