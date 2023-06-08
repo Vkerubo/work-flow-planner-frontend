@@ -12,5 +12,9 @@ import { Star } from "@mui/icons-material";
 export const FavoriteList = ({ list }) => {
   const [open, setOpen] = React.useState(true);
 
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
   return <div>FavoriteList</div>;
 };
