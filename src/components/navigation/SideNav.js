@@ -49,6 +49,9 @@ const Navigation = ({ projects, favorites, mode, fetchProjects }) => {
       {/* Divider */}
       <Divider sx={{ display: { sm: "none" } }} />
 
+      {/* Project List */}
+      <Projectlist list={projects} />
+    </>
   );
 };
 
