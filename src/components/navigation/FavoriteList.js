@@ -19,9 +19,10 @@ export const FavoriteList = ({ list }) => {
   return (
     <div>
       <List>
-        <ListItemButton onClick={handleClick}></ListItemButton>
-        <ListItemText primary="Favorites" />
-        {open ? <ExpandLess /> : <ExpandMore />}
+        <ListItemButton onClick={handleClick}>
+          <ListItemText primary="Favorites" />
+          {open ? <ExpandLess /> : <ExpandMore />}
+        </ListItemButton>
       </List>
     </div>
   );
