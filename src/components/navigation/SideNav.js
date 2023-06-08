@@ -38,10 +38,13 @@ const Navigation = ({ projects, favorites, mode, fetchProjects }) => {
             sx={{ color: mode ? "#444" : "#fff" }}
             align="center"
           >
-            Mercury
+            Work Flow Planner
           </Typography>
         </a>
       </Toolbar>
+
+      {/* Favorite List */}
+      <FavoriteList list={favorites} />
 
 
   );
