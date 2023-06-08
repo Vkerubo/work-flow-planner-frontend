@@ -5,6 +5,7 @@ import ListItemText from "@mui/material";
 import ListItemIcon from "@mui/material";
 import { Dashboard } from "@mui/icons-material";
 import Collapse from "@mui/material";
+import { ProjectColors } from "../../helpers/ProjectColors";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import { ExpandMore } from "@mui/icons-material";
 import { StarBorder } from "@mui/icons-material";
