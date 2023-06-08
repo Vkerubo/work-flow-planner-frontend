@@ -19,3 +19,10 @@
 .search-bar .MuiInput-underline:before {
   border: none;
 }
+
+@media (min-width: 600px) {
+  .search-bar {
+    margin: 0 1em;
+    padding: 0 2em;
+  }
+}
