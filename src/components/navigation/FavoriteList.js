@@ -8,3 +8,7 @@ import Collapse from "@mui/material";
 import { ExpandLess } from "@mui/icons-material";
 import { ExpandMore } from "@mui/icons-material";
 import { Star } from "@mui/icons-material";
+
+export const FavoriteList = ({ list }) => {
+  return <div>FavoriteList</div>;
+};
