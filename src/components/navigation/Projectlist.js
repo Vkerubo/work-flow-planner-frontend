@@ -7,6 +7,7 @@ import { Dashboard } from "@mui/icons-material";
 import Collapse from "@mui/material";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import { ExpandMore } from "@mui/icons-material";
+import { StarBorder } from "@mui/icons-material";
 
 export const Projectlist = ({ list }) => {
   const [open, setOpen] = React.useState(true);
@@ -42,7 +43,12 @@ export const Projectlist = ({ list }) => {
                     <Link className="link" to={`/projects/${item.id}`} exact>
                       {/* Project item */}
                       <ListItemButton sx={{ pl: 4 }}>
-                        <ListItemIcon>{/* Icon for project */}</ListItemIcon>
+                        <ListItemIcon>
+                          {/* Icon for project */}
+                          <Dashboard
+                            style={{ color: currentColorScheme.colorDark }}
+                          />
+                        </ListItemIcon>
                         {/* Title of project */}
                         <ListItemText primary={item.title} />
                       </ListItemButton>
