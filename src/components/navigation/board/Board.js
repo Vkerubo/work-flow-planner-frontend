@@ -22,6 +22,14 @@ const Board = ({
   handleUpdateBoard,
   colors,
   mode,
-}) => {};
+}) => {
+  const { name, id } = board;
+  const [tasks, setTasks] = React.useState([]);
+
+  React.useEffect(() => {
+    // Update the 'tasks' state when 'board' changes
+    setTasks(board.tasks);
+  }, [board]);
+};
 
 export default Board;
