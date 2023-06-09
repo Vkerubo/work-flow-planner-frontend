@@ -24,6 +24,9 @@ const TopNav = ({
   mode,
   search,
   setSearch,
-}) => {};
+}) => {
+  // Define the icon based on the theme mode
+  const icon = !mode ? <Brightness7Icon /> : <Brightness2Icon />;
+};
 
 export default TopNav;
