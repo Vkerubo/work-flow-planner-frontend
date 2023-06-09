@@ -31,17 +31,21 @@ const ProjectDashboard = ({
   handleUpdatingProject,
   handleDeleteProject,
 }) => {
-  // State for project and boards
   const [project, setProject] = React.useState([]);
   const [boards, setBoards] = React.useState([]);
 
   React.useEffect(() => {
     fetchProject();
-  }, [match.params.id]);
+  }, [match?.params?.id]);
 
-  // Fetch project data from the API
   const fetchProject = () => {
-    fetch(`http://localhost:9292/projects/${match.params.id}`)
+    const projectId = match?.params?.id;
+
+    if (!projectId) {
+      return; // Do nothing if projectId is undefined
+    }
+
+    fetch(`http://localhost:9292/projects/${projectId}`)
       .then((res) => res.json())
       .then((data) => {
         setProject(data);
@@ -49,29 +53,24 @@ const ProjectDashboard = ({
       });
   };
 
-  // Handle favoring/unfavoring a project
   const handleFavoringAProject = () => {
     const updatefavProject = { ...project, favorite: !project.favorite };
     setProject(updatefavProject);
     handleUpdatingProject(updatefavProject);
   };
 
-  // Handle updating project data
   const handleChange = (changedProject) => {
     setProject(changedProject);
     handleUpdatingProject(changedProject);
   };
 
-  // Handle deleting a project
   const handleDelete = (deleteProject) => {
     handleDeleteProject(deleteProject);
     history.push("/projects/");
   };
 
-  //get colors for project
   const currentColorScheme = ProjectColors(project);
 
-  //project menu to see more options
   const [moreAnchorEl, setMoreAnchorEl] = React.useState(null);
   const isMenuOpen = Boolean(moreAnchorEl);
   const handleMenuOpen = (event) => {
@@ -81,14 +80,12 @@ const ProjectDashboard = ({
     setMoreAnchorEl(null);
   };
 
-  //project edit modal
   const [openModal, setOpenModal] = React.useState(false);
   const handleOpenModel = () => setOpenModal(true);
   const handleCloseModel = () => setOpenModal(false);
 
   return (
     <>
-      {/* Render project dashboard if project data is available */}
       {project ? (
         <>
           <Container maxWidth="xl" sx={{ height: "80vh", overflow: "scroll" }}>
@@ -103,7 +100,6 @@ const ProjectDashboard = ({
                 <Tooltip
                   title={project.favorite ? "Remove Favorite" : "Add Favorite"}
                 >
-                  {/* Render favorite/unfavorite icon */}
                   <IconButton
                     onClick={handleFavoringAProject}
                     size="large"
@@ -127,7 +123,6 @@ const ProjectDashboard = ({
 
               <Box className="flex">
                 <Tooltip title="Project Options">
-                  {/* Render project options menu */}
                   <IconButton
                     aria-label="show options"
                     aria-controls="project-options"
@@ -139,7 +134,6 @@ const ProjectDashboard = ({
                 </Tooltip>
               </Box>
 
-              {/* Render project options menu */}
               <DropdownMenu
                 moreAnchorEl={moreAnchorEl}
                 isMenuOpen={isMenuOpen}
@@ -150,7 +144,6 @@ const ProjectDashboard = ({
                 componentType="Project"
               />
 
-              {/* Render project edit modal */}
               <ProjectModal
                 project={project}
                 openModal={openModal}
@@ -160,7 +153,6 @@ const ProjectDashboard = ({
               />
             </Grid>
 
-            {/* Render boards component */}
             <Boards
               boards={boards}
               setBoards={setBoards}
@@ -172,7 +164,6 @@ const ProjectDashboard = ({
           </Container>
         </>
       ) : (
-        // Render skeleton loader if project data is not available
         <Container maxWidth="xl" sx={{ height: "80vh" }}>
           <Grid
             item

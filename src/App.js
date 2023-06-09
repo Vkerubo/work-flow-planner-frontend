@@ -9,6 +9,7 @@ import Projects from "./containers/Projects";
 import ProjectDashboard from "./containers/ProjectDashboard";
 import Box from "@mui/material/Box";
 import Layout from "./containers/Layout";
+import Boards from "./containers/Boards";
 
 const App = () => {
   // handle dark mode
@@ -134,6 +135,7 @@ const App = () => {
                   />
                 }
               />
+              <Route path="/boards" element={<Boards />} />
             </Routes>
           </Layout>
         </Router>
