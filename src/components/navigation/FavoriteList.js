@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import List from "@mui/material/List";
-import ListItemIcon from "@mui/material";
-import ListItemText from "@mui/material";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
 import { ListItemButton } from "@mui/material";
-import Collapse from "@mui/material";
+import Collapse from "@mui/material/Collapse";
 import { ExpandLess } from "@mui/icons-material";
 import { ExpandMore } from "@mui/icons-material";
 import { Star } from "@mui/icons-material";
