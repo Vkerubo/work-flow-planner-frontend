@@ -2,6 +2,9 @@ import React from "react";
 import { Typography, Box } from "@mui/material";
 import LinearProgress from "@mui/material";
 
+//component to display a linear progress bar with a corresponding label showing the progress percentage.
+//To visually represent the progress of a tasks.
+
 export default function LinearProgressWithLabel(props) {
   return (
     <Box className="flex">
