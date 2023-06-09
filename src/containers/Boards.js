@@ -54,7 +54,7 @@ const Boards = ({
   // Handle creating a new board
   const handleCreateBoard = (newBoard) => {
     // Send a POST request to the API to create a new board
-    fetch("http://localhost:9292/boards/", {
+    fetch("http://localhost:9292/boards", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

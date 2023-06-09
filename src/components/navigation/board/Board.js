@@ -47,7 +47,7 @@ const Board = ({
 
   // handle new task
   const handleCreateTask = (newTask) => {
-    fetch("/api/tasks/", {
+    fetch("http://localhost:9292/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
