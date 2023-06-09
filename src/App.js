@@ -28,14 +28,14 @@ const App = () => {
 
   // Fetch projects from the API
   const fetchProjects = () => {
-    fetch("/api/projects")
+    fetch("http://localhost:9292/projects")
       .then((res) => res.json())
       .then((data) => setProjects(data));
   };
 
   // Update a project using the PATCH method
   const patchProjects = (project) => {
-    fetch(`/api/projects/${project.id}`, {
+    fetch(`http://localhost:9292/projects/${project.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const App = () => {
 
   // Create a new project using the POST method
   const postProjects = (project) => {
-    fetch("/api/projects/", {
+    fetch("http://localhost:9292/projects/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -73,7 +73,7 @@ const App = () => {
       (project) => project.id !== deleteProject.id
     );
 
-    fetch(`/api/projects/${deleteProject.id}`, {
+    fetch(`http://localhost:9292/projects/${deleteProject.id}`, {
       method: "DELETE",
     });
 
