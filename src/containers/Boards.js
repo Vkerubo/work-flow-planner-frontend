@@ -5,7 +5,7 @@ import Board from "../components/navigation/board/Board";
 import BoardModal from "../components/navigation/modal/BoardModal";
 import CreateBoard from "../components/navigation/board/CreateBoard";
 
-// Component for rendering the boards
+// render Board components
 const Boards = ({
   boards,
   projectId,

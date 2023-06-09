@@ -1,10 +1,11 @@
 import * as React from "react";
-import "../../css/modal.css";
+
 import { palette } from "../../theme/palette";
 import TitleField from "./TitleField";
 import ColorPicker from "./ColorPicker";
 import { SaveButton } from "./SaveButton";
 import { Typography, Modal } from "@mui/material";
+import "./modal.css";
 
 const ProjectModal = ({
   openModal,
