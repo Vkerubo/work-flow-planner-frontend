@@ -14,7 +14,7 @@ import {
   Button,
 } from "@mui/material";
 import AdapterDateFns from "@mui/lab/AdapterDateFns/AdapterDateFns";
-import LocalizationProvider from "@mui/lab";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import { DatePicker } from "@mui/lab";
 
 const TaskModal = ({
