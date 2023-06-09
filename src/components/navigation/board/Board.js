@@ -2,7 +2,7 @@ import * as React from "react";
 import DropdownMenu from "../DropDownMenu";
 import BoardModal from "../modal/BoardModal";
 import TaskModal from "../modal/TaskModal";
-import Tasks from "../../containers/Tasks";
+import Tasks from "../../../containers/Tasks";
 import {
   Grid,
   Typography,
