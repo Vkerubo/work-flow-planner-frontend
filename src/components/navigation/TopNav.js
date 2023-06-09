@@ -15,3 +15,15 @@ import Brightness2Icon from "@mui/icons-material/Brightness2";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 
 const drawerWidth = 240;
+
+// TopNav component renders the top navigation bar
+const TopNav = ({
+  open,
+  toggleDrawer,
+  toggleTheme,
+  mode,
+  search,
+  setSearch,
+}) => {};
+
+export default TopNav;
