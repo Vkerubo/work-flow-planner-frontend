@@ -14,8 +14,8 @@ import {
   Button,
 } from "@mui/material";
 import AdapterDateFns from "@mui/lab/AdapterDateFns/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import { DatePicker } from "@mui/lab";
+import { LocalizationProvider } from "@mui/x-date-pickers";
 
 const TaskModal = ({
   task,
@@ -224,3 +224,6 @@ const TaskModal = ({
 };
 
 export default TaskModal;
+
+//The LocalizationProvider component in Material-UI is used to provide localization and
+//internationalization support to the date pickers and other components that require localized content.
