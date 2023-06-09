@@ -89,7 +89,7 @@ const ProjectDashboard = ({
   return (
     <>
       {/* Render project dashboard if project data is available */}
-      {project.length !== 0 ? (
+      {project ? (
         <>
           <Container maxWidth="xl" sx={{ height: "80vh", overflow: "scroll" }}>
             <Grid
