@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Box } from "@mui/material";
-import LinearProgress from "@mui/material";
+import LinearProgress from "@mui/material/LinearProgress";
 
 //component to display a linear progress bar with a corresponding label showing the progress percentage.
 //To visually represent the progress of a tasks.
