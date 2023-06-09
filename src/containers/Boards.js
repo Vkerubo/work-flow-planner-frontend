@@ -20,7 +20,7 @@ const Boards = ({
     const updatedBoards = boards.filter((board) => board.id !== deleteBoard.id);
 
     // Send a DELETE request to the API to delete the board
-    fetch(`/api/boards/${deleteBoard.id}`, {
+    fetch(`http://localhost:9292/boards/${deleteBoard.id}`, {
       method: "DELETE",
     });
 
@@ -36,7 +36,7 @@ const Boards = ({
     );
 
     // Send a PATCH request to the API to update the board
-    fetch(`/api/boards/${updatedBoard.id}`, {
+    fetch(`http://localhost:9292/boards/${updatedBoard.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -54,7 +54,7 @@ const Boards = ({
   // Handle creating a new board
   const handleCreateBoard = (newBoard) => {
     // Send a POST request to the API to create a new board
-    fetch("/api/boards/", {
+    fetch("http://localhost:9292/boards/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

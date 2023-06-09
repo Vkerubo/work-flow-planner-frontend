@@ -41,7 +41,7 @@ const ProjectDashboard = ({
 
   // Fetch project data from the API
   const fetchProject = () => {
-    fetch(`/api/projects/${match.params.id}`)
+    fetch(`http://localhost:9292/projects/${match.params.id}`)
       .then((res) => res.json())
       .then((data) => {
         setProject(data);
