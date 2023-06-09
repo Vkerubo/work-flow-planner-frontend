@@ -4,6 +4,7 @@ import { Menu, MenuItem, IconButton } from "@mui/material";
 import CreateIcon from "@mui/icons-material/Create";
 import DeleteIcon from "@mui/icons-material/Delete";
 
+//a drop down for displaying options for editing and deleting a component
 const DropdownMenu = ({
   moreAnchorEl,
   isMenuOpen,
