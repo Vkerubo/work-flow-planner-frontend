@@ -23,7 +23,7 @@ const Login = ({ history }) => {
           <Logo />
           {/* Render the page title */}
           <Typography variant="h1" component="h1">
-            Mercury
+            Work Flow Planner
           </Typography>
         </Box>
         <Box className="flex column">
