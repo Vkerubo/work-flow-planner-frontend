@@ -13,3 +13,15 @@ import {
 } from "@mui/material";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import AddIcon from "@mui/icons-material/Add";
+
+const Board = ({
+  board,
+  boards,
+  fetchProject,
+  handleDeleteBoard,
+  handleUpdateBoard,
+  colors,
+  mode,
+}) => {};
+
+export default Board;
