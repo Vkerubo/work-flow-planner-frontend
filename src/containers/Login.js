@@ -16,12 +16,13 @@ const Login = () => {
   const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
   const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => {
     // Perform login authentication logic here
-    // For simplicity, we'll check if the username is not empty
-    if (userName.trim() !== "") {
+    // For simplicity, we'll check if the username and password are not empty
+    if (userName.trim() !== "" && password.trim() !== "") {
       setIsLoggedIn(true);
       setOpenModal(false);
       navigate("/projects"); // Navigate to the projects path
@@ -78,6 +79,13 @@ const Login = () => {
             variant="standard"
             value={userName}
             onChange={(event) => setUserName(event.target.value)}
+          />
+          <TextField
+            label="Password"
+            variant="standard"
+            type="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
           />
         </DialogContent>
         <DialogActions>
