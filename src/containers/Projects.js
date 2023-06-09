@@ -5,6 +5,7 @@ import Skeleton from "@mui/material/Skeleton";
 import Project from "../components/navigation/project/Project";
 import ProjectModal from "../components/navigation/modal/ProjectModal";
 
+//This Projects component is responsible for rendering a list of projects.
 const Projects = ({
   projects,
   mode,
