@@ -109,38 +109,32 @@ const App = () => {
             setSearch={setSearch}
             fetchProjects={fetchProjects}
           >
-            <Route
-              exact
-              path="/"
-              render={(routerProps) => <Login {...routerProps} />}
-            />
-            <Route
-              exact
-              path="/projects"
-              render={(routerProps) => (
-                <Projects
-                  {...routerProps}
-                  projects={filterProjects}
-                  mode={mode}
-                  patchProjects={patchProjects}
-                  postProjects={postProjects}
-                  handleUpdatingProject={handleUpdatingProject}
-                  handleDeleteProject={handleDeleteProject}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/projects/:id"
-              render={(routerProps) => (
-                <ProjectDashboard
-                  {...routerProps}
-                  mode={mode}
-                  handleUpdatingProject={handleUpdatingProject}
-                  handleDeleteProject={handleDeleteProject}
-                />
-              )}
-            />
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route
+                path="/projects"
+                element={
+                  <Projects
+                    projects={filterProjects}
+                    mode={mode}
+                    patchProjects={patchProjects}
+                    postProjects={postProjects}
+                    handleUpdatingProject={handleUpdatingProject}
+                    handleDeleteProject={handleDeleteProject}
+                  />
+                }
+              />
+              <Route
+                path="/projects/:id"
+                element={
+                  <ProjectDashboard
+                    mode={mode}
+                    handleUpdatingProject={handleUpdatingProject}
+                    handleDeleteProject={handleDeleteProject}
+                  />
+                }
+              />
+            </Routes>
           </Layout>
         </Router>
       </Box>
