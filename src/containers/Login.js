@@ -1,9 +1,12 @@
 import React from "react";
 import { Grid, Typography, Button, Box } from "@mui/material";
 import { Logo } from "../components/navigation/Logo";
+import { useNavigate } from "react-router-dom";
 
-//Login component represents a login page in this app.
-const Login = ({ history }) => {
+// Login component represents a login page in this app.
+const Login = () => {
+  const navigate = useNavigate();
+
   // Render the Login component
   return (
     <Grid
@@ -42,7 +45,7 @@ const Login = ({ history }) => {
           {/* Render the login button */}
           <Button
             // Navigate to "/projects" when the button is clicked
-            onClick={() => history.push("/projects")}
+            onClick={() => navigate("/projects")}
             variant="contained"
             size="large"
             className="btn-login"
