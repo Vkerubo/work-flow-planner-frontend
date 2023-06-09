@@ -8,7 +8,7 @@ import ProjectModal from "../components/navigation/modal/ProjectModal";
 //This Projects component is responsible for rendering a list of projects.
 const Projects = ({
   projects,
-  mode,
+  mode, //Represents the mode of the projects (e.g., "view", "edit").
   postProjects,
   handleUpdatingProject,
   handleDeleteProject,
