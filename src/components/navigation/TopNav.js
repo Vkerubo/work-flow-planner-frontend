@@ -13,3 +13,5 @@ import { NotificationAddOutlined } from "@mui/icons-material";
 import SearchIcon from "@mui/icons-material/Search";
 import Brightness2Icon from "@mui/icons-material/Brightness2";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
+
+const drawerWidth = 240;
