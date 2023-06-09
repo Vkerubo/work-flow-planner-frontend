@@ -10,17 +10,17 @@ import {
   Divider,
 } from "@mui/material/styles/createTypography";
 import Drawer from "@mui/material";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
 // Navigation component renders the toolbar, favorite list, and project list
 const Navigation = ({ projects, favorites, mode, fetchProjects }) => {
-  let history = useHistory();
+  let navigate = useNavigate();
 
   // Handle click on the home button, navigate to "/projects" and fetch projects
   const handleHomeClick = (event) => {
-    history.push("/projects");
+    navigate.push("/projects");
     fetchProjects();
   };
 
