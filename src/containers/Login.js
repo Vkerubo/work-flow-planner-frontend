@@ -80,13 +80,15 @@ const Login = () => {
             value={userName}
             onChange={(event) => setUserName(event.target.value)}
           />
-          <TextField
-            label="Password"
-            variant="standard"
-            type="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
+          <Box mt={2}>
+            <TextField
+              label="Password"
+              variant="standard"
+              type="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </Box>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleLogin} color="primary">
