@@ -99,10 +99,12 @@ const Board = ({
       }}
     >
       <Grid container alignContent="center" justifyContent="space-between">
+        {/* Display the board name */}
         <Typography variant="h6" component="h3" gutterBottom>
           {name}
         </Typography>
         <Box className="flex">
+          {/* Show a button to open the board options menu */}
           <Tooltip title="Board Options">
             <IconButton
               aria-label="show options"
@@ -116,6 +118,7 @@ const Board = ({
         </Box>
       </Grid>
 
+      {/* Render the tasks component */}
       <Tasks
         tasks={tasks}
         currentBoardId={id}
