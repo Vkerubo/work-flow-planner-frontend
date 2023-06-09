@@ -34,7 +34,7 @@ const Navigation = ({ projects, favorites, mode, fetchProjects }) => {
             sx={{ color: mode ? "#444" : "#fff" }}
             align="center"
           >
-            Work Flow
+            Work Flow Planner
           </Typography>
         </a>
       </Toolbar>
