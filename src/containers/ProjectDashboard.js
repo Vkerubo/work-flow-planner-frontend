@@ -17,6 +17,13 @@ import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarIcon from "@mui/icons-material/Star";
 
 //render project dashboards
+
+/*
+The purpose of this dashboard is to display and manage a project's information and
+its associated boards. It provides a user interface for users to view and interact with project details,
+favorite or unfavorite the project,
+access project options, and navigate to different boards within the project
+*/
 const ProjectDashboard = ({
   match,
   history,
