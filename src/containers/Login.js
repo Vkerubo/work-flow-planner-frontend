@@ -29,15 +29,12 @@ const Login = () => {
 
         {/* Render the remaining content */}
         <Box className="flex column">
-          <Typography component="h2" variant="h6" align="center">
-            Worry about your <em>job</em> not your <em>time</em>.
-          </Typography>
           <Typography
             component="p"
             align="center"
             className="title-thin padding-bottom"
           >
-            A project management tool to help you keep your life organized.
+            Effortlessly organize your projects : Organize your life
           </Typography>
           <Button
             onClick={() => navigate("/projects")}
