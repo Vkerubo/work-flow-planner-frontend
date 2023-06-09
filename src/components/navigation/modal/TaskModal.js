@@ -27,6 +27,7 @@ const TaskModal = ({
   boards,
   currentBoardId,
 }) => {
+  // State to manage the task details
   const [name, setName] = React.useState(task ? task.name : "");
   const [boardId, setBoardId] = React.useState(currentBoardId);
   //change to input task date
@@ -51,10 +52,12 @@ const TaskModal = ({
 
   const priority_options = ["Low", "Medium", "High"];
 
+  // Function to handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
 
     if (task) {
+      // If the task exists, update its details
       const updatedTask = {
         ...task,
         name: name,
@@ -66,6 +69,7 @@ const TaskModal = ({
       };
       updateTask(updatedTask);
     } else {
+      // If the task is new, create a new task with the entered details
       const newTask = {
         name: name,
         board_id: boardId,
@@ -115,6 +119,7 @@ const TaskModal = ({
             onSubmit={handleSubmit}
             className="form task-form padding-top"
           >
+            {/* Component for entering and updating the task name */}
             <TitleField title={name} setTitle={setName} labelName="Task Name" />
 
             <FormGroup className="task-input">
