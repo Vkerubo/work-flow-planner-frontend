@@ -10,31 +10,28 @@ const Login = () => {
   // Render the Login component
   return (
     <Grid
-      // Set styling for the main grid container
       sx={{ height: "100vh", width: "100vw", backgroundColor: "#fff" }}
       className="home-container"
       alignContent="center"
       justifyContent="center"
     >
       <Box
-        // Set styling for the inner box container
         sx={{ height: "100vh", width: "100vw", p: 3 }}
         className="flex column"
       >
-        <Box className="flex">
-          {/* Render the Logo component */}
-          <Logo />
-          {/* Render the page title */}
-          <Typography variant="h1" component="h1">
-            Work Flow Planner
-          </Typography>
-        </Box>
+        {/* Render the Logo component */}
+        <Logo />
+
+        {/* Render the title */}
+        <Typography variant="h1" component="h1" align="center">
+          Work Flow Planner
+        </Typography>
+
+        {/* Render the remaining content */}
         <Box className="flex column">
-          {/* Render the subtitle */}
           <Typography component="h2" variant="h6" align="center">
             Worry about your <em>job</em> not your <em>time</em>.
           </Typography>
-          {/* Render the description */}
           <Typography
             component="p"
             align="center"
@@ -42,9 +39,7 @@ const Login = () => {
           >
             A project management tool to help you keep your life organized.
           </Typography>
-          {/* Render the login button */}
           <Button
-            // Navigate to "/projects" when the button is clicked
             onClick={() => navigate("/projects")}
             variant="contained"
             size="large"
