@@ -52,7 +52,7 @@ const App = () => {
 
   // Create a new project using the POST method
   const postProjects = (project) => {
-    fetch("http://localhost:9292/projects/", {
+    fetch("http://localhost:9292/projects", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

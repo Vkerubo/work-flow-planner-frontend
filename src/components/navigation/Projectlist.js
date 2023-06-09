@@ -2,7 +2,7 @@ import React from "react";
 import { List } from "@mui/material";
 import { Link } from "react-router-dom";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import { Dashboard } from "@mui/icons-material";
 import Collapse from "@mui/material/Collapse";
@@ -18,6 +18,8 @@ export const Projectlist = ({ list }) => {
     setOpen(!open);
   };
 
+  console.log(list);
+
   return (
     <>
       <List>
@@ -31,31 +33,26 @@ export const Projectlist = ({ list }) => {
         {/* Collapsible section body */}
         <Collapse in={open} timeout="auto" unmountOnExit>
           {/* Render project items */}
-
           {list
             ? list.map((item) => {
                 const currentColorScheme = ProjectColors(item);
                 return (
-                  <List
-                    component="div"
-                    disablePadding
+                  <ListItemButton
+                    component={Link}
+                    to={`/projects/${item.id}`}
+                    className="link"
                     key={`menuitem-${item.id}`}
+                    sx={{ pl: 4 }}
                   >
-                    {/* Link to individual project */}
-                    <Link className="link" to={`/projects/${item.id}`} exact>
-                      {/* Project item */}
-                      <ListItemButton sx={{ pl: 4 }}>
-                        <ListItemIcon>
-                          {/* Icon for project */}
-                          <Dashboard
-                            style={{ color: currentColorScheme.colorDark }}
-                          />
-                        </ListItemIcon>
-                        {/* Title of project */}
-                        <ListItemText primary={item.title} />
-                      </ListItemButton>
-                    </Link>
-                  </List>
+                    <ListItemIcon>
+                      {/* Icon for project */}
+                      <Dashboard
+                        style={{ color: currentColorScheme.colorDark }}
+                      />
+                    </ListItemIcon>
+                    {/* Title of project */}
+                    <ListItemText primary={item.title} />
+                  </ListItemButton>
                 );
               })
             : null}
