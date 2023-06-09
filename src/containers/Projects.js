@@ -4,6 +4,7 @@ import ControlPointIcon from "@mui/icons-material/ControlPoint";
 import Skeleton from "@mui/material/Skeleton";
 import Project from "../components/navigation/project/Project";
 import ProjectModal from "../components/navigation/modal/ProjectModal";
+import { Link } from "react-router-dom";
 
 //This Projects component is responsible for rendering a list of projects.
 const Projects = ({
