@@ -2,6 +2,8 @@
 
 This app lets you organize projects into boards and tasks.
 
+You can use this app in conjunction with my project task management API [see the repo](https://github.com/Vkerubo/phase-3-sinatra-react-project)
+
 ## Technologies Used In This App
 
 - JavaScript
@@ -60,3 +62,7 @@ npm start
 - Create new tasks
 - Delete a task
 - Update task name, due date, priority, status, and associated board
+
+### Author
+
+Vkerubo - github
