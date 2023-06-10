@@ -72,7 +72,7 @@ const Layout = ({
             <Container maxWidth="xl" sx={{ flexGrow: 1, p: 3 }}>
               <Grid container spacing={3}>
                 <Grid item xs={12}>
-                  <Paper className="container-paper" sx={{ height: "800vh" }}>
+                  <Paper className="container-paper" sx={{ height: "80vh" }}>
                     {/* Render the children component */}
                     {children}
                   </Paper>
