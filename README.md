@@ -63,6 +63,6 @@ npm start
 - Delete a task
 - Update task name, due date, priority, status, and associated board
 
-### Author
+## Author
 
 Vkerubo - github
