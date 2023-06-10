@@ -14,38 +14,36 @@ const Tasks = ({
   currentBoardId,
 }) => {
   // State variables to hold completed and incomplete tasks
-  const [completedTasks, setCompletedTasks] = React.useState(
-    tasks
-      ? tasks
-          .filter((task) => task.completed === true)
-          .sort((a, b) => parseDate(a.due_date) - parseDate(b.due_date))
-      : []
-  );
-  const [incompleteTasks, setIncompleteTasks] = React.useState(
-    tasks
-      ? tasks
-          .filter((task) => task.completed === false)
-          .sort((a, b) => parseDate(a.due_date) - parseDate(b.due_date))
-      : []
-  );
+  const [completedTasks, setCompletedTasks] = React.useState([]);
+  const [incompleteTasks, setIncompleteTasks] = React.useState([]);
 
   React.useEffect(() => {
-    // Update completed and incomplete tasks when tasks prop changes
-    setCompletedTasks(
-      tasks
-        ? tasks
-            .filter((task) => task.completed === true)
-            .sort((a, b) => parseDate(a.due_date) - parseDate(b.due_date))
-        : []
-    );
-    setIncompleteTasks(
-      tasks
-        ? tasks
-            .filter((task) => task.completed === false)
-            .sort((a, b) => parseDate(a.due_date) - parseDate(b.due_date))
-        : []
-    );
-  }, [tasks]);
+    // Fetch tasks from the database
+    const fetchTasks = async () => {
+      try {
+        const response = await fetch("http://localhost:9292/tasks");
+        const data = await response.json();
+
+        // Sort tasks by due date
+        const sortedTasks = data.sort(
+          (a, b) => parseDate(a.due_date) - parseDate(b.due_date)
+        );
+
+        // Separate completed and incomplete tasks
+        const completed = sortedTasks.filter((task) => task.completed === true);
+        const incomplete = sortedTasks.filter(
+          (task) => task.completed === false
+        );
+
+        setCompletedTasks(completed);
+        setIncompleteTasks(incomplete);
+      } catch (error) {
+        console.log("Error fetching tasks:", error);
+      }
+    };
+
+    fetchTasks();
+  }, []);
 
   // Combine incomplete and completed tasks into a single array
   const newTaskOrder = [incompleteTasks, completedTasks].flat();
@@ -59,14 +57,9 @@ const Tasks = ({
 
   // Update task in the state and make API call to update the task in the database
   const updateTask = (updatedTask) => {
-    let updatedTasks;
-    if (updatedTask.board_id === currentBoardId) {
-      updatedTasks = tasks.map((task) =>
-        task.id === updatedTask.id ? updatedTask : task
-      );
-    } else {
-      updatedTasks = tasks.filter((task) => task.id !== updatedTask.id);
-    }
+    const updatedTasks = newTaskOrder.map((task) =>
+      task.id === updatedTask.id ? updatedTask : task
+    );
 
     fetch(`http://localhost:9292/tasks/${updatedTask.id}`, {
       method: "PATCH",
@@ -74,32 +67,26 @@ const Tasks = ({
         "Content-Type": "application/json",
         accept: "application/json",
       },
-      body: JSON.stringify({
-        board_id: updatedTask.board_id,
-        completed: updatedTask.completed,
-        description: updatedTask.description,
-        due_date: updatedTask.due_date,
-        name: updatedTask.name,
-        priority: updatedTask.priority,
-        status: updatedTask.status,
-      }),
+      body: JSON.stringify(updatedTask),
     }).then(() => {
+      setTasks(updatedTasks);
       if (updatedTask.board_id !== currentBoardId) {
         fetchProject();
       }
     });
-
-    setTasks(updatedTasks);
   };
 
   // Delete a task from the state and make API call to delete the task from the database
   const handleDeleteTask = (deleteTask) => {
-    const updatedTasks = tasks.filter((task) => task.id !== deleteTask.id);
+    const updatedTasks = newTaskOrder.filter(
+      (task) => task.id !== deleteTask.id
+    );
 
     fetch(`http://localhost:9292/tasks/${deleteTask.id}`, {
       method: "DELETE",
+    }).then(() => {
+      setTasks(updatedTasks);
     });
-    setTasks(updatedTasks);
   };
 
   return (
