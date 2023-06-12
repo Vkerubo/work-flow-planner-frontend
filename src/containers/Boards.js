@@ -84,6 +84,8 @@ const Boards = ({
   const handleOpenModel = () => setOpenModal(true);
   const handleCloseModel = () => setOpenModal(false);
 
+  console.log(boards);
+
   return (
     <Container sx={{ overflow: "scroll" }} maxWidth="xl">
       <Grid container item className="boards-container">

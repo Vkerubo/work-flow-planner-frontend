@@ -88,8 +88,6 @@ const Board = ({
   const handleOpenTaskModel = () => setOpenTaskModal(true);
   const handleCloseTaskModel = () => setOpenTaskModal(false);
 
-  console.log(boards);
-
   return (
     <Grid
       item

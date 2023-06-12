@@ -86,7 +86,7 @@ const ProjectDashboard = ({
 
   return (
     <>
-      {project.title ? (
+      {project ? (
         <>
           <Container maxWidth="xl" sx={{ height: "80vh", overflow: "scroll" }}>
             <Grid
